@@ -7,14 +7,25 @@
  */
 
 import React from 'react';
-import { View, StyleSheet, Text } from 'react-native';
-
-
+import { View, StyleSheet, Text, Button } from 'react-native';
+import MyButton from './components/MyButton';
 
 const App = () => {
+  const name = 'myeongjune';
   return (
    <View style={styles.container}>
-     <Text style={styles.title}>My First React Native</Text>
+     <Text style={styles.title}>
+       {(()=>{
+         if (name === 'Hanbit') return 'My name is Hanbit';
+         else if (name === 'myeongjune') return 'My name is myoungjune';
+         else return 'My name is React Native';
+       }
+       )()}
+     </Text>
+     <Button color="#000" title="Button" onPress={()=> alert('click!!!')}/>
+     <MyButton onPress={()=> alert('props')}/>
+     <MyButton title="button!" onPress={()=> alert('children')}/>
+
    </View>
   );
 };
@@ -28,7 +39,11 @@ const styles = StyleSheet.create({
   },
   title:{
     fontSize: 30,
+    color: '#ff0000',
   },
+  btnstyle:{
+    color: '#ff0000',
+  }
 });
 
 export default App;

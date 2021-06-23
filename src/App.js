@@ -9,6 +9,7 @@
 import React from 'react';
 import { View, StyleSheet, Text, Button } from 'react-native';
 import MyButton from './components/MyButton';
+import Counter from './components/Counter';
 
 const App = () => {
   const name = 'myeongjune';
@@ -24,7 +25,7 @@ const App = () => {
      </Text>
      <Button color="#000" title="Button" onPress={()=> alert('click!!!')}/>
      <MyButton onPress={()=> alert('props')}/>
-     <MyButton title="button!" onPress={()=> alert('children')}/>
+     <Counter/>
 
    </View>
   );
